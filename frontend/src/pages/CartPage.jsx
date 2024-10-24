@@ -28,6 +28,7 @@ const CartPage = () => {
         time: item.time,
         quantity: item.quantity,
         totalPrice: item.price * item.quantity,
+        // addOns: items.addOns
       })),
       totalAmount: total,
       estimatedTime: maxTime,
@@ -46,12 +47,13 @@ const CartPage = () => {
       });
 
       const data = await response.json();
-
+      
       if (response.ok) {
         setOrderConfirmation({
           orderToken: data.data.orderToken,
-          items: orderData.cartItems,
+          cartItems: orderData.cartItems,
           totalAmount: total,
+          orderDate: data.data.orderDate,
           estimatedTime: maxTime,
         });
 
@@ -81,7 +83,7 @@ const CartPage = () => {
 
       {items.length === 0 ? (
         <button
-          className="w-fit px-10 py-3 my-5 text-2xl bg-[#472C9D] text-white rounded-3xl"
+          className="w-fit px-10 py-3 my-5 text-xl bg-[#472C9D] text-white rounded-3xl"
           onClick={() => navigate("/homepage")}
         >
           Add some items
@@ -95,6 +97,7 @@ const CartPage = () => {
               quantity={item.quantity}
               key={key}
               image={item.image}
+              addOns={item.addOns}
             />
           ))}
 

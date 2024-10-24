@@ -8,6 +8,9 @@ import SearchPage from "../pages/SearchPage";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import MyOrders from "../components/MyOrders";
+import AdminLogin from "../pages/AdminLogin";
+import AdminSide from "../pages/AdminSide";
+import EditProfile from "../pages/EditProfile";
 
 const routes = [
   {
@@ -17,6 +20,10 @@ const routes = [
   {
     path: "/login",
     element: <LoginPage />,
+  },
+  {
+    path: "/adminlogin",
+    element: <AdminLogin />,
   },
   {
     path: "/register",
@@ -42,16 +49,24 @@ const routes = [
         path: "cart",
         element: <CartPage />,
       },
+      {
+        path: "profile/orders",
+        element: <MyOrders />,
+      },
+      {
+        path: "profile/edit",
+        element: <EditProfile />,
+      }
     ],
+  },
+  {
+    path:"/adminside",
+    element: <AdminSide />
   },
   {
     path: "/item/:name/:price",
     element: <ProductPage />,
   },
-  {
-    path: "/orders",
-    element: <MyOrders />,
-  }
 ];
 
 export default routes;
