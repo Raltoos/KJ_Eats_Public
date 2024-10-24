@@ -1,4 +1,4 @@
-# Canteen Management System
+# KJ Eats.
 
 ## Overview
 This is a full-stack canteen management system that allows users to browse menus, place orders, and receive real-time notifications, while the admin can manage orders and update the menu via a CMS. The system consists of three parts: the frontend, backend, and a CMS (Strapi) for content management.
